@@ -13,4 +13,15 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.post('/', async (req, res) => {
+    const { email, nombre, prioridad } = req.body;
+
+    const result = await pool.query(
+        'INSERT INTO usuarios (email, nombre, prioridad) VALUES ($1, $2, $3) RETURNING *',
+        [email, nombre, prioridad]
+    );
+    res.status(201).json(result.rows[0]);
+})
+
+
 export default router;

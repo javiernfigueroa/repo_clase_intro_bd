@@ -9,6 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/usuarios', userRouter)
+app.use('/agregarUsuario', userRouter)
 
 // tarea para el que quiera. Crear la ruta post para insertar en la bd un usuario
 
