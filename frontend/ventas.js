@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
 
         try {
-            const response = await fetch('http://localhost:3000/ventas/ventas', { // CORREGIDO
+            const response = await fetch('http://localhost:3000/ventas/ventas', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(venta)
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function cargarVentas() {
         try {
-            const response = await fetch('http://localhost:3000/ventas/ventas'); // CORREGIDO
+            const response = await fetch('http://localhost:3000/ventas/ventas');
             if (!response.ok) {
                 throw new Error('Error al obtener ventas');
             }
